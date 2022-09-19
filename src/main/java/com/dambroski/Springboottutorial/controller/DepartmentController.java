@@ -1,6 +1,9 @@
 package com.dambroski.Springboottutorial.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -19,6 +22,12 @@ public class DepartmentController {
 		
 		return service.saveDepartment(department);
 		
+	}
+	
+	
+	@GetMapping("/departments")
+	public List <Department> fetchDepartament() {
+		return service.fetchDepartament();
 	}
 	
 	
