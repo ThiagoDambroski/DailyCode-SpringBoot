@@ -1,10 +1,10 @@
-package service;
+package com.dambroski.Springboottutorial.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import entity.Department;
-import repository.DepartmentRepository;
+import com.dambroski.Springboottutorial.entity.Department;
+import com.dambroski.Springboottutorial.repository.DepartmentRepository;
 
 @Service
 public class DepartmentServiceImpl implements DepartmentService {
