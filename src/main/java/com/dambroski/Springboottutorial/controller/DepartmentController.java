@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -41,6 +42,12 @@ public class DepartmentController {
 	public String deleteDepartmentsById(@PathVariable("id") Long DepartmentId) {
 		service.deleteDepartmentsById(DepartmentId);
 		return "Delete successfully";
+	}
+	
+	@PutMapping("/departments/{id}")
+	public Department updateDepartment(@PathVariable("id")Long departmentId, @RequestBody Department department) {
+		
+		return service.updateDepartment(departmentId,department);
 	}
 	
 	
