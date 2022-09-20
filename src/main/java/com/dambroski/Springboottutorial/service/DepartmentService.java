@@ -10,4 +10,6 @@ public interface DepartmentService {
 
 	public List<Department> fetchDepartament();
 
+	public Department fetchDepartamentById(Long departmentId);
+
 }
