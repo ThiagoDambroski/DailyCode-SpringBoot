@@ -50,6 +50,12 @@ public class DepartmentController {
 		return service.updateDepartment(departmentId,department);
 	}
 	
+	@GetMapping("departments/name/{name}")
+	public Department fetchDepartmentByName(@PathVariable("name") String departmentName) {
+		
+		return service.fetchDepartmentByName(departmentName);
+	}
+	
 	
 
 }
