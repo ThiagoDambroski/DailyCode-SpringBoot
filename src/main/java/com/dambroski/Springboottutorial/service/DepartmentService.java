@@ -3,6 +3,7 @@ package com.dambroski.Springboottutorial.service;
 import java.util.List;
 
 import com.dambroski.Springboottutorial.entity.Department;
+import com.dambroski.Springboottutorial.erro.DepartmentNotFoundException;
 
 public interface DepartmentService {
 
@@ -10,7 +11,7 @@ public interface DepartmentService {
 
 	public List<Department> fetchDepartament();
 
-	public Department fetchDepartamentById(Long departmentId);
+	public Department fetchDepartamentById(Long departmentId) throws DepartmentNotFoundException;
 
 	public void deleteDepartmentsById(Long departmentId);
 
