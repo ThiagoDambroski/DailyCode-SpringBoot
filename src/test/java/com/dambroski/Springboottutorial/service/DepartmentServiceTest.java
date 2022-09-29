@@ -2,8 +2,8 @@ package com.dambroski.Springboottutorial.service;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,7 +24,7 @@ class DepartmentServiceTest {
 
 
 	@BeforeEach
-	void setUp() throws Exception {
+	void setUp(){
 		Department department = Department.builder(
 				).departmentName("IT").
 				departmentAddress("brasil").
@@ -35,12 +35,15 @@ class DepartmentServiceTest {
 	}
 	
 	@Test
+	@DisplayName("Get data based on valid department name")
 	public void whenValidDepartmentName_thenDepartmentShouldFound() {
 		String departmentName = "IT";
 		Department found = service.fetchDepartmentByName(departmentName);
 		
-		assertEquals(departmentName, found);
+		assertEquals(departmentName, found.getDepartmentName());
 		
 	}
+	
+	
 
 }
