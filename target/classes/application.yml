@@ -35,6 +35,13 @@ spring:
 welcome:
   message: Welcome world!
   
+  management:
+    endpoints:
+        web:
+            exposure:
+                include: "*"
+       
+  
 ---
 spring:
   profiles: prod
